@@ -1,6 +1,6 @@
 # configuration for https://github.com/caksoylar/keymap-drawer
 draw_config:
-  footer_text: 'Keymap View: <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a>'
+  footer_text: 'keymap-drawer view of Furglitch/lily58-zmk-config'
   # dark_mode: auto
   n_columns: 1
   # draw_key_sides: true # draw a square in the middle of the keys
@@ -20,30 +20,77 @@ draw_config:
   append_colon_to_layer_header: true
   small_pad: 2.0
   svg_extra_style: |
+    @import url('https://www.nerdfonts.com/assets/css/webfont.css');
     /* For default sytles, see https://github.com/caksoylar/keymap-drawer/blob/main/keymap_drawer/config.py#L85 */
+    /* Catppuccin Mocha color palette: https://github.com/catppuccin/catppuccin */
+
+    :root {
+      /* Catppuccin Mocha colors */
+      --rosewater: #f5e0dc;
+      --flamingo: #f2cdcd;
+      --pink: #f5c2e7;
+      --mauve: #cba6f7;
+      --red: #f38ba8;
+      --maroon: #eba0ac;
+      --peach: #fab387;
+      --yellow: #f9e2af;
+      --green: #a6e3a1;
+      --teal: #94e2d5;
+      --sky: #89dceb;
+      --sapphire: #74c7ec;
+      --blue: #89b4fa;
+      --lavender: #b4befe;
+      --text: #cdd6f4;
+      --subtext1: #bac2de;
+      --subtext0: #a6adc8;
+      --overlay2: #9399b2;
+      --overlay1: #7f849c;
+      --overlay0: #6c7086;
+      --surface2: #585b70;
+      --surface1: #45475a;
+      --surface0: #313244;
+      --base: #1e1e2e;
+      --mantle: #181825;
+      --crust: #11111b;
+    }
 
     svg.keymap {
-      font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
+      font-family: "UbuntuMono Nerd Font", "Ubuntu Mono", Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
       font-size: 16px;
       font-weight: bold;
       text-rendering: optimizeLegibility;
+      fill: var(--text);
     }
 
-    /* Color accent for held keys
-    red = #f00
-    green = #0f0
-    blue = #00f
-    yellow = #ff0
-    cyan = #0ff
-    magenta = #f0f
-    white = #fff
-    black = #000
-    grey = #888
-    light grey = #ccc
-    #ffc
-    */
+    /* default key styling */
+    rect.key {
+        fill: var(--surface0);
+    }
+
+    rect.key, rect.combo {
+        stroke: var(--surface1);
+        stroke-width: 1;
+    }
+
+    /* color accent for combo boxes */
+    rect.combo, rect.combo-separate {
+        fill: color-mix(in srgb, var(--sapphire) 30%, var(--base));
+    }
+
+    /* color accent for held keys */
     rect.held, rect.combo.held {
-        fill: #f00;
+        fill: var(--red);
+    }
+
+    /* lighter symbol for transparent keys */
+    text.trans {
+        fill: var(--overlay0);
+    }
+
+    /* color accent for ghost (optional) keys */
+    rect.ghost, rect.combo.ghost {
+        stroke-dasharray: 4, 4;
+        stroke-width: 2;
     }
 
     /* Technique borrowed and extended from https://github.com/englmaxi/zmk-config/blob/master/keymap-drawer/config.yaml */
@@ -224,17 +271,52 @@ parse_config:
     'DE_CAPS': $$mdi:keyboard-caps$$
     'TAB': $$mdi:keyboard-tab$$
     '&mt LSHFT COMMA': {t: $$mdi:google-downasaur$$, h: $$mdi:apple-keyboard-shift$$, type: tap_dance}
+    '&bat_shift': {t: 󰘲, h: L󰘶, type: tap_dance}
 
-    # CONTROL CMD/WINDOWS SHIFT ALT/META/OPTION
-    '&kp LSHFT': $$mdi:apple-keyboard-shift$$
-    '&kp LCTRL': $$mdi:apple-keyboard-control$$
-    '&kp RCTRL': $$mdi:apple-keyboard-control$$
-    '&kp LGUI': $$mdi:apple-keyboard-command$$
-    '&kp RGUI': $$mdi:apple-keyboard-command$$
-    '&kp LALT': $$mdi:apple-keyboard-option$$
-    '&kp RALT': $$mdi:apple-keyboard-option$$
-    '&kp RSHFT': $$mdi:apple-keyboard-shift$$
-    '&kp BSPC': $$mdi:backspace-outline$$
+    # CONTROL CMD/WINDOWS SHIFT ALT/META/OPTION - using Nerd Font glyphs
+    '&kp LSHFT': L󰘶
+    '&kp LCTRL': L󰘴
+    '&kp RCTRL': R󰘴
+    '&kp LGUI': L
+    '&kp RGUI': R
+    '&kp LALT': L󰘵
+    '&kp RALT': R󰘵
+    '&kp RSHFT': R󰘶
+    '&kp BSPC': 󰁮
+    '&kp ESC': Esc
+    '&kp SPACE': ␣
+    '&kp RET': 󰌑
+    '&kp TAB': 󰌒
+    '&kp DEL': 󰹾
+
+    '&kp AMPS': '&'
+
+    # Navigation
+    '&kp PG_UP': Page Up
+    '&kp PG_DN': Page Down
+    '&kp INS': Insert
+    '&kp HOME': Home
+    '&kp END': End
+    '&kp CAPS': Caps Lock
+    '&kp PSCRN': Print Scrn
+    '&kp PAUSE_BREAK': Pause Break
+    '&kp UP': 
+    '&kp DOWN': 
+    '&kp LEFT': 
+    '&kp RIGHT': 
+
+    # Media
+    '&kp C_VOL_UP': 
+    '&kp C_VOL_DN': 
+    '&kp C_PP': 󰐊
+    '&kp C_NEXT': 󰒭
+    '&kp C_FF': 󰈑
+    '&kp C_REWIND': 󰑟
+    '&kp C_PREV': 󰒫
+
+    # Bluetooth
+    '&bt BT_CLR': 󰂯 CLR
+    '&bt BT_SEL 0': 󰂯 1
 
   qmk_keycode_map:
     XXXXXXX: ''
@@ -324,6 +406,7 @@ parse_config:
     combo_lock:   {draw_separate: true}
     combo_bslh:   {draw_separate: true}
     combo_slsh:   {draw_separate: true}
+    f13_layer_combo: {skip: true}
 
   zmk_keycode_map:
 

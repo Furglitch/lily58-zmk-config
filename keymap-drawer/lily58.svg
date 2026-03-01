@@ -141,30 +141,77 @@ path.combo {
 }
 /* End Tabler Icons Cleanup */
 
+@import url('https://www.nerdfonts.com/assets/css/webfont.css');
 /* For default sytles, see https://github.com/caksoylar/keymap-drawer/blob/main/keymap_drawer/config.py#L85 */
+/* Catppuccin Mocha color palette: https://github.com/catppuccin/catppuccin */
+
+:root {
+  /* Catppuccin Mocha colors */
+  --rosewater: #f5e0dc;
+  --flamingo: #f2cdcd;
+  --pink: #f5c2e7;
+  --mauve: #cba6f7;
+  --red: #f38ba8;
+  --maroon: #eba0ac;
+  --peach: #fab387;
+  --yellow: #f9e2af;
+  --green: #a6e3a1;
+  --teal: #94e2d5;
+  --sky: #89dceb;
+  --sapphire: #74c7ec;
+  --blue: #89b4fa;
+  --lavender: #b4befe;
+  --text: #cdd6f4;
+  --subtext1: #bac2de;
+  --subtext0: #a6adc8;
+  --overlay2: #9399b2;
+  --overlay1: #7f849c;
+  --overlay0: #6c7086;
+  --surface2: #585b70;
+  --surface1: #45475a;
+  --surface0: #313244;
+  --base: #1e1e2e;
+  --mantle: #181825;
+  --crust: #11111b;
+}
 
 svg.keymap {
-  font-family: Ubuntu Mono, Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
+  font-family: "UbuntuMono Nerd Font", "Ubuntu Mono", Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
   font-size: 16px;
   font-weight: bold;
   text-rendering: optimizeLegibility;
+  fill: var(--text);
 }
 
-/* Color accent for held keys
-red = #f00
-green = #0f0
-blue = #00f
-yellow = #ff0
-cyan = #0ff
-magenta = #f0f
-white = #fff
-black = #000
-grey = #888
-light grey = #ccc
-#ffc
-*/
+/* default key styling */
+rect.key {
+    fill: var(--surface0);
+}
+
+rect.key, rect.combo {
+    stroke: var(--surface1);
+    stroke-width: 1;
+}
+
+/* color accent for combo boxes */
+rect.combo, rect.combo-separate {
+    fill: color-mix(in srgb, var(--sapphire) 30%, var(--base));
+}
+
+/* color accent for held keys */
 rect.held, rect.combo.held {
-    fill: #f00;
+    fill: var(--red);
+}
+
+/* lighter symbol for transparent keys */
+text.trans {
+    fill: var(--overlay0);
+}
+
+/* color accent for ghost (optional) keys */
+rect.ghost, rect.combo.ghost {
+    stroke-dasharray: 4, 4;
+    stroke-width: 2;
 }
 
 /* Technique borrowed and extended from https://github.com/englmaxi/zmk-config/blob/master/keymap-drawer/config.yaml */
@@ -285,7 +332,7 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(28, 112)" class="key keypos-12">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">↹</text>
+<text x="0" y="0" class="key tap">󰌒</text>
 </g>
 <g transform="translate(84, 105)" class="key keypos-13">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -381,7 +428,7 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(28, 224)" class="key keypos-36">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<use href="#mdi:apple-keyboard-shift" xlink:href="#mdi:apple-keyboard-shift" x="-9" y="-9" height="18" width="18.0" class="key tap glyph mdi:apple-keyboard-shift"/>
+<text x="0" y="0" class="key tap"><tspan style="font-size: 60%">&amp;bas_shift</tspan></text>
 </g>
 <g transform="translate(84, 217)" class="key keypos-37">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -454,7 +501,7 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(574, 266) rotate(-30.0)" class="key keypos-54">
 <rect rx="6" ry="6" x="-26" y="-40" width="52" height="80" class="key"/>
-<text x="0" y="0" class="key tap">⏎</text>
+<text x="0" y="0" class="key tap">󰌑</text>
 </g>
 <g transform="translate(644, 266)" class="key keypos-55">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -710,7 +757,7 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(700, 260)" class="key keypos-56">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">⌦</text>
+<text x="0" y="0" class="key tap">󰹾</text>
 </g>
 <g transform="translate(756, 260)" class="key keypos-57">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -782,15 +829,15 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(84, 105)" class="key keypos-13">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">REWIND</text>
+<text x="0" y="0" class="key tap">󰑟</text>
 </g>
 <g transform="translate(140, 91)" class="key keypos-14">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">⏯</text>
+<text x="0" y="0" class="key tap">󰐊</text>
 </g>
 <g transform="translate(196, 84)" class="key keypos-15">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">FF</text>
+<text x="0" y="0" class="key tap">󰈑</text>
 </g>
 <g transform="translate(252, 91)" class="key keypos-16">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -812,7 +859,7 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(728, 84)" class="key keypos-20">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">↑</text>
+<text x="0" y="0" class="key tap"></text>
 </g>
 <g transform="translate(784, 91)" class="key keypos-21">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
@@ -858,15 +905,15 @@ rect.held, rect.combo.held {
 </g>
 <g transform="translate(672, 147)" class="key keypos-31">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">←</text>
+<text x="0" y="0" class="key tap"></text>
 </g>
 <g transform="translate(728, 140)" class="key keypos-32">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">↓</text>
+<text x="0" y="0" class="key tap"></text>
 </g>
 <g transform="translate(784, 147)" class="key keypos-33">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key"/>
-<text x="0" y="0" class="key tap">→</text>
+<text x="0" y="0" class="key tap"></text>
 </g>
 <g transform="translate(840, 161)" class="key trans keypos-34">
 <rect rx="6" ry="6" x="-26" y="-26" width="52" height="52" class="key trans"/>
@@ -1215,4 +1262,4 @@ rect.held, rect.combo.held {
 </a></g>
 </g>
 </g>
-<text x="964.0" y="1517.0" class="footer">Keymap View: <a href="https://github.com/caksoylar/keymap-drawer">keymap-drawer</a></text></svg>
+<text x="964.0" y="1517.0" class="footer">keymap-drawer view of Furglitch/lily58-zmk-config</text></svg>
