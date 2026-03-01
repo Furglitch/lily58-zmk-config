@@ -55,7 +55,7 @@ layers:
   - '='
   - .
   - BT CLR
-  - BT 2
+  - BT 1
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
