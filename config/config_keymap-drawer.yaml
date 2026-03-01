@@ -191,19 +191,12 @@ parse_config:
     '&out OUT_USB': Out USB
     '&out OUT_BLE': Out BLE
 
-    '&bt BT_SEL 0': BT 1
-    '&bt BT_SEL 1': BT 2
-    '&bt BT_SEL 2': BT 3
-    '&bt BT_SEL 3': BT 4
-    '&bt BT_SEL 4': BT 5
-
     # Display
     'DISPLAY_UP': {t: $$mdi:television-classic$$, h: $$mdi:arrow-up$$, type: tap_dance}
     'DISPLAY_DOWN': {t: $$mdi:television-classic$$, h: $$mdi:arrow-down$$, type: tap_dance}
     'DISPLAY_LEFT': {t: $$mdi:television-classic$$, h: $$mdi:arrow-left$$, type: tap_dance}
     'DISPLAY_RIGHT': {t: $$mdi:television-classic$$, h: $$mdi:arrow-right$$, type: tap_dance}
     'DISPLAY_SPACE': {t: $$mdi:television-classic$$, h: $$mdi:keyboard-space$$, type: tap_dance}
-
 
     # Rgb
     '&rgb_ug RGB_TOG': {t: $$mdi:led-on$$, h: $$mdi:toggle-switch$$, s: $$mdi:led-outline$$, type: toggle}
@@ -289,7 +282,9 @@ parse_config:
     '&kp TAB': 󰌒
     '&kp DEL': 󰹾
 
+    '&kp AMPR': '&'
     '&kp AMPS': '&'
+    '&kp AMPERSAND': '&'
 
     # Navigation
     '&kp PG_UP': Page Up
@@ -406,7 +401,7 @@ parse_config:
     combo_lock:   {draw_separate: true}
     combo_bslh:   {draw_separate: true}
     combo_slsh:   {draw_separate: true}
-    f13_layer_combo: {skip: true}
+    f13_layer_combo: {draw_separate: true, hidden: true}
 
   zmk_keycode_map:
 

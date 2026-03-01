@@ -1,8 +1,7 @@
 layout: {zmk_keyboard: lily58}
 layers:
-  Bas: [Esc, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', 󰌒, Q, W, E, R, T, Y, U, I, O, P, '=', '$$mdi:apple-keyboard-control$$', A, S, D, F, G, H, J, K,
-    L, ;, '''', '&bas_shift', Z, X, C, V, B, '[', ']', N, M, ',', ., /, '$$mdi:apple-keyboard-shift$$', '$$mdi:apple-keyboard-option$$', '$$mdi:apple-keyboard-command$$',
-    Low, ␣, 󰌑, Rai, '$$mdi:backspace-outline$$', '$$mdi:apple-keyboard-command$$']
+  Bas: [Esc, '1', '2', '3', '4', '5', '6', '7', '8', '9', '0', '-', 󰌒, Q, W, E, R, T, Y, U, I, O, P, '=', L󰘴, A, S, D, F, G, H, J, K, L, ;, '''', '&bas_shift', Z,
+    X, C, V, B, '[', ']', N, M, ',', ., /, R󰘶, L󰘵, L, Low, ␣, 󰌑, Rai, 󰁮, R]
   Low:
   - '`'
   - '!'
@@ -11,7 +10,7 @@ layers:
   - $
   - '%'
   - ^
-  - AMPS
+  - '&'
   - '*'
   - (
   - )
@@ -54,8 +53,8 @@ layers:
   - '3'
   - '='
   - .
-  - BT CLR
-  - BT 1
+  - 󰂯 CLR
+  - 󰂯 1
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
@@ -183,3 +182,5 @@ layers:
 combos:
 - p: [12, 55]
   k: F13
+  draw_separate: true
+  hidden: true
