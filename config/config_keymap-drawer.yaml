@@ -293,7 +293,7 @@ parse_config:
     '&kp HOME': Home
     '&kp END': End
     '&kp CAPS': Caps Lock
-    '&kp PSCRN': Print Scrn
+    '&kp PSCRN': 󰹑
     '&kp PAUSE_BREAK': Pause Break
     '&kp UP': 
     '&kp DOWN': 
