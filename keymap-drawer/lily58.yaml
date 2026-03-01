@@ -75,11 +75,11 @@ layers:
   - F10
   - F11
   - F12
-  - MUTE
+  - {t: ▽, type: trans}
   - REWIND
   - ⏯
   - FF
-  - {t: ▽, type: trans}
+  - MUTE
   - {t: ▽, type: trans}
   - Page Up
   - Home
@@ -176,10 +176,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - {t: ▽, type: trans}
   - {type: held}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
 combos:
-- p: [12, 54]
+- p: [12, 55]
   k: F13

@@ -24,7 +24,7 @@
         // Tab + Raise combo to access F13-F24 layer (extra_1, layer 3)
         f13_layer_combo {
             bindings = <&mo 3>;
-            key-positions = <12 54>;  // Tab (position 12) + Raise thumb key (position 54)
+            key-positions = <12 55>;  // Tab (position 12) + Raise thumb key (position 55)
             timeout-ms = <50>;
         };
     };
@@ -73,7 +73,7 @@
             // Raise Layer - Navigation & F-keys, Media on left
             // ------------------------------------------------------------------------------------------------------------
             // |  F1   |  F2  |  F3  |  F4  |  F5  |  F6  |        |  F7  |  F8  |  F9  |  F10 |  F11 |  F12 |
-            // | MUTE  |C_REWIND| C_PP | C_FF|      |      |        | PgUp | Home |  ↑   | End  |      |      |
+            // |       |C_REWIND| C_PP | C_FF| MUTE |      |        | PgUp | Home |  ↑   | End  |      |      |
             // |       |      |      |      |      |      |        | PgDn |  ←   |  ↓   |  →   |      |      |
             // |       |      |      |      |      |      |        |      |      |      |      |      |      |
             //                       |      |      |      |        |      |      |      |
@@ -81,7 +81,7 @@
             display-name = "Rai";
             bindings = <
 &kp F1      &kp F2        &kp F3    &kp F4    &kp F5  &kp F6                    &kp F7     &kp F8    &kp F9    &kp F10    &kp F11  &kp F12
-&kp C_MUTE  &kp C_REWIND  &kp C_PP  &kp C_FF  &trans  &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans   &trans
+&trans  &kp C_REWIND  &kp C_PP  &kp C_FF  &kp C_MUTE  &trans                    &kp PG_UP  &kp HOME  &kp UP    &kp END    &trans   &trans
 &trans      &trans        &trans    &trans    &trans  &trans                    &kp PG_DN  &kp LEFT  &kp DOWN  &kp RIGHT  &trans   &trans
 &trans      &trans        &trans    &trans    &trans  &trans  &trans    &trans  &trans     &trans    &trans    &trans     &trans   &trans
                                     &trans    &trans  &trans  &trans    &trans  &trans     &trans    &trans
