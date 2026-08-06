@@ -125,6 +125,7 @@ path.combo {
 /* End Tabler Icons Cleanup */
 
 @import url('https://www.nerdfonts.com/assets/css/webfont.css');
+@import url('https://googleapis.com');
 /* For default sytles, see https://github.com/caksoylar/keymap-drawer/blob/main/keymap_drawer/config.py#L85 */
 /* Catppuccin Mocha color palette: https://github.com/catppuccin/catppuccin */
 
@@ -159,7 +160,7 @@ path.combo {
 }
 
 svg.keymap {
-  font-family: "UbuntuMono Nerd Font", "Ubuntu Mono", Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
+  font-family: "NerdFontsSymbols Nerd Font", "Ubuntu Mono", Inconsolata, Consolas, Liberation Mono, Menlo, monospace;
   font-size: 16px;
   font-weight: bold;
   text-rendering: optimizeLegibility;
